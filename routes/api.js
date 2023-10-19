@@ -2,9 +2,9 @@ const express = require ('express');
 const router = express.Router();
 const apiController = require('../controllers/apiController');
 
-router.get('/details',apiController.details);
-router.post('/interest',apiController.create);
-router.put('/interest/:id',apiController.update);
-router.delete('/interest/:id',apiController.delete);
+router.get('/colaborador/:id',apiController.getColaborador);
+router.post('/colaborador',apiController.createColaborador);
+router.put('/colaborador/:id',apiController.updateColaborador);
+router.delete('/colaborador/:id',apiController.deleteColaborador);
 
 module.exports = router;

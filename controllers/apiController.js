@@ -1,20 +1,27 @@
 const Colaborador = require('../models/colaboradorModel');
 
-exports.details = function (req, res) {
-    res.send({type: 'GET'});
+exports.getColaborador = function (req, res, next) {
+    Colaborador.find({_id: req.params.id}).then(function(colaborador){
+        res.send(colaborador);
+    }).catch(next);
 };
  
-exports.create = function (req, res, next) {
-    console.log('You made a POST request: ', req.body);
+exports.createColaborador = function (req, res, next) {
     Colaborador.create(req.body).then(function(colaborador){
         res.send(colaborador);
     }).catch(next);
 };
 
-exports.update = function (req, res) {
-    res.send({type: 'PUT'});
+exports.updateColaborador = function (req, res, next) {
+    Colaborador.findByIdAndUpdate({_id: req.params.id},req.body).then(function(){
+        Colaborador.findOne({_id: req.params.id}).then(function(colaborador){
+            res.send(colaborador);
+        });
+    }).catch(next);
 };
 
-exports.delete = function (req, res) {
-    res.send({type: 'DELETE'});
+exports.deleteColaborador = function (req, res, next) {
+    Colaborador.findByIdAndRemove({_id: req.params.id}).then(function(colaborador){
+      res.send(colaborador);
+    }).catch(next);
 };
