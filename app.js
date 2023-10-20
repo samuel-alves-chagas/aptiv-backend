@@ -8,7 +8,7 @@ const uri = `mongodb+srv://userAPPAptivC317:kIOS2babU9RvZrO9@cluster0.anxf3by.mo
 mongoose.connect(uri);
 
 mongoose.connection.on('connected', function () {
-  console.log('Connected to Database '+'test');
+  console.log('Connected to Database');
 });
 
 mongoose.connection.on('error', (err) => {

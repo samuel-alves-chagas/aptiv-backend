@@ -41,7 +41,7 @@ const UnidadeSchema = new Schema({
         type: String,
         required: [true,'*Campo obrigatório!']
     },
-    numero_funcionario: {
+    numero_funcionarios: {
         type: Number,
         required: [true,'*Campo obrigatório!']
     },
