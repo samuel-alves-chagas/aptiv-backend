@@ -93,10 +93,10 @@ const RemuneracaoSchema = new Schema({
         required: [true,'*Campo obrigatório!']
     },
     descontos: {
-        type: DescontoBeneficioSchema
+        type: [DescontoBeneficioSchema]
     },
     beneficios: {
-        type: DescontoBeneficioSchema
+        type: [DescontoBeneficioSchema]
     }
 });
 
