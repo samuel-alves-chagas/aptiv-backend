@@ -152,7 +152,15 @@ const ColaboradorSchema = new Schema({
     },
     competencias: {
         type: [String]
-    }
+    },
+    registro: {
+        type: String,
+        required: [true,'*Campo obrigatório!']
+    },
+    senha: {
+        type: String,
+        required: [true,'*Campo obrigatório!']
+    },
 });
 
 const Colaborador = mongoose.model('Colaborador', ColaboradorSchema);

@@ -5,6 +5,7 @@ const apiControllerColaborador = require('../controllers/apiControllerColaborado
 const apiControllerBeneficio = require('../controllers/apiControllerBeneficio');
 const apiControllerDocumento = require('../controllers/apiControllerDocumento');
 const apiControllerUnidade = require('../controllers/apiControllerUnidade');
+const apiControllerLogin = require('../controllers/apiControllerLogin')
 
 router.get('/colaborador/:id',apiControllerColaborador.getColaborador);
 router.post('/colaborador',apiControllerColaborador.createColaborador);
@@ -25,5 +26,7 @@ router.get('/unidade/:id',apiControllerUnidade.getUnidade);
 router.post('/unidade',apiControllerUnidade.createUnidade);
 router.put('/unidade/:id',apiControllerUnidade.updateUnidade);
 router.delete('/unidade/:id',apiControllerUnidade.deleteUnidade);
+
+router.post('/login', apiControllerLogin.Login)
 
 module.exports = router;
