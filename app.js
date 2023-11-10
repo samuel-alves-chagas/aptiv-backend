@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const app = express();
 let port = 5000;
 
+const cors=require('cors');
+
 const mongoose = require('mongoose');
 const uri = `mongodb+srv://userAPPAptivC317:kIOS2babU9RvZrO9@cluster0.anxf3by.mongodb.net/?retryWrites=true&w=majority`;
 mongoose.connect(uri);
@@ -20,6 +22,7 @@ app.get('/', function(req, res){
 });
 
 app.use(bodyParser.json());
+app.use(cors())
 
 const routes = require('./routes/api');
 app.use('/api', routes);
