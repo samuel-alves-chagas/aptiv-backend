@@ -8,7 +8,7 @@ exports.Login = function(req, res, next) {
     if(colaborador[0]) {
       return res.json(colaborador[0]).send(200);
     }
-    return res.json({error:"Registro ou senha inválidos"}).status(404).send()
+    return res.status(404).send({error:"Registro ou senha inválidos"})
   }).catch((err) => {
     console.log(err)
     next()
