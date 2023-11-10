@@ -6,7 +6,7 @@ exports.Login = function(req, res, next) {
 
   Colaborador.find({registro: registroRecebido, senha: senhaRecebida}).then(function(colaborador){
     if(colaborador[0]) {
-      return res.send(200);
+      return res.json(colaborador[0]).send(200);
     }
     return res.json({error:"Registro ou senha inválidos"}).send(404)
   }).catch((err) => {
