@@ -76,7 +76,7 @@ const FeriasSchema = new Schema({
     }
 });
 
-const DescontoBeneficioSchema = new Schema({
+const DescontoSchema = new Schema({
     tipo: {
         type: String,
         required: [true,'*Campo obrigatório!']
@@ -87,16 +87,24 @@ const DescontoBeneficioSchema = new Schema({
     }
 });
 
+const BeneficioSchema = new Schema({
+    nome: {
+        type: String,
+        required: [true,'*Campo obrigatório!']
+    }, 
+
+});
+
 const RemuneracaoSchema = new Schema({
     salario_base: {
         type: Number,
         required: [true,'*Campo obrigatório!']
     },
     descontos: {
-        type: [DescontoBeneficioSchema]
+        type: [DescontoSchema]
     },
     beneficios: {
-        type: [DescontoBeneficioSchema]
+        type: [BeneficioSchema]
     }
 });
 
@@ -104,7 +112,11 @@ const SchemaBeneficios = new Schema({
     id_do_beneficio: {
         type: String,
         required: [true,'*Campo obrigatório!']
-    }
+    },
+    nome: {
+        type: String,
+        required: [true,'*Campo obrigatório!']
+    }, 
 })
 
 const ColaboradorSchema = new Schema({

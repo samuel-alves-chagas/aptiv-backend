@@ -5,6 +5,7 @@ exports.getColaborador = function (req, res, next) {
         res.send(colaborador);
     }).catch(next);
 };
+
  
 exports.createColaborador = function (req, res, next) {
     Colaborador.create(req.body).then(function(colaborador){
@@ -25,3 +26,9 @@ exports.deleteColaborador = function (req, res, next) {
       res.send(colaborador);
     }).catch(next);
 };
+
+exports.getBeneficioByColaborador = function(req, res, next) {
+    Colaborador.findById({_id: req.params.id}).then(function(colaborador) {
+        res.send(colaborador.beneficios);
+    }).catch(next);
+}
