@@ -13,6 +13,7 @@ router.put('/colaborador/:id',apiControllerColaborador.updateColaborador);
 router.delete('/colaborador/:id',apiControllerColaborador.deleteColaborador);
 router.get('/colaborador/beneficio/:id', apiControllerColaborador.getBeneficioByColaborador);
 router.get('/colaborador',apiControllerColaborador.getAllColaboradores);
+router.get('/colaborador/ferias/:id',apiControllerColaborador.getFeriasByColaborador);
 
 router.get('/beneficio/:id',apiControllerBeneficio.getBeneficio);
 router.post('/beneficio',apiControllerBeneficio.createBeneficio);

@@ -37,3 +37,9 @@ exports.getBeneficioByColaborador = function(req, res, next) {
         res.send(colaborador.beneficios);
     }).catch(next);
 }
+
+exports.getFeriasByColaborador = function(req, res, next) {
+    Colaborador.findById({_id: req.params.id}).then(function(colaborador) {
+        res.send(colaborador.ferias);
+    }).catch(next);
+}
