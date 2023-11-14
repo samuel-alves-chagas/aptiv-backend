@@ -11,6 +11,7 @@ router.get('/colaborador/:id',apiControllerColaborador.getColaborador);
 router.post('/colaborador',apiControllerColaborador.createColaborador);
 router.put('/colaborador/:id',apiControllerColaborador.updateColaborador);
 router.delete('/colaborador/:id',apiControllerColaborador.deleteColaborador);
+router.get('/colaborador',apiControllerColaborador.getAllColaboradores);
 
 router.get('/beneficio/:id',apiControllerBeneficio.getBeneficio);
 router.post('/beneficio',apiControllerBeneficio.createBeneficio);

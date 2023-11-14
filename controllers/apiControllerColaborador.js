@@ -5,6 +5,12 @@ exports.getColaborador = function (req, res, next) {
         res.send(colaborador);
     }).catch(next);
 };
+
+exports.getAllColaboradores = function (req, res, next) {
+    Colaborador.find().then(function(colaboradores){
+        res.send(colaboradores);
+    }).catch(next);
+};
  
 exports.createColaborador = function (req, res, next) {
     Colaborador.create(req.body).then(function(colaborador){
