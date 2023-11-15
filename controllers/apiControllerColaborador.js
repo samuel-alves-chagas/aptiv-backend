@@ -34,7 +34,7 @@ exports.deleteColaborador = function (req, res, next) {
 
 exports.getBeneficioByColaborador = function(req, res, next) {
     Colaborador.findById({_id: req.params.id}).then(function(colaborador) {
-        res.send(colaborador.beneficios);
+        res.send(colaborador.remuneracao.beneficios);
     }).catch(next);
 }
 
