@@ -19,6 +19,7 @@ router.get('/beneficio/:id',apiControllerBeneficio.getBeneficio);
 router.post('/beneficio',apiControllerBeneficio.createBeneficio);
 router.put('/beneficio/:id',apiControllerBeneficio.updateBeneficio);
 router.delete('/beneficio/:id',apiControllerBeneficio.deleteBeneficio);
+router.get('/beneficio',apiControllerBeneficio.getAllBeneficios);
 
 router.get('/documento/:id',apiControllerDocumento.getDocumento);
 router.post('/documento',apiControllerDocumento.createDocumento);

@@ -5,6 +5,12 @@ exports.getBeneficio = function (req, res, next) {
         res.send(beneficio);
     }).catch(next);
 };
+
+exports.getAllBeneficios = function (req, res, next) {
+    Beneficio.find().then(function(beneficios){
+        res.send(beneficios);
+    }).catch(next);
+};
  
 exports.createBeneficio = function (req, res, next) {
     Beneficio.create(req.body).then(function(beneficio){
