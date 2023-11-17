@@ -29,6 +29,7 @@ router.get('/unidade/:id',apiControllerUnidade.getUnidade);
 router.post('/unidade',apiControllerUnidade.createUnidade);
 router.put('/unidade/:id',apiControllerUnidade.updateUnidade);
 router.delete('/unidade/:id',apiControllerUnidade.deleteUnidade);
+router.get('/unidade',apiControllerUnidade.getAllUnidades);
 
 router.post('/login', apiControllerLogin.Login)
 

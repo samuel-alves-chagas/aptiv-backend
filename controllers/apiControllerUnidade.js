@@ -5,6 +5,12 @@ exports.getUnidade = function (req, res, next) {
         res.send(unidade);
     }).catch(next);
 };
+
+exports.getAllUnidades = function (req, res, next) {
+    Unidade.find().then(function(unidades){
+        res.send(unidades);
+    }).catch(next);
+};
  
 exports.createUnidade = function (req, res, next) {
     Unidade.create(req.body).then(function(unidade){
