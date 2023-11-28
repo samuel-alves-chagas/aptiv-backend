@@ -11,7 +11,7 @@ const DocumentoSchema = new Schema({
         required: [true,'*Campo obrigatório!']
     },
     data: {
-        type: Date,
+        type: Object,
         required: [true,'*Campo obrigatório!']
     },
     url_arquivo: {
