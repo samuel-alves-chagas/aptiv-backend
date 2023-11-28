@@ -31,6 +31,8 @@ exports.getDocumentoByDataEColaborador = function(req, res, next) {
     const data = req.body.data
 
     Documento.find({funcionario_id: funcionario_id, data: data}).then(function(documento) {
-        res.send(documento.url_arquivo);
+        if(documento[0]) {
+            return res.json(documento[0]).send(200);
+        }
     }).catch(next);
 }
