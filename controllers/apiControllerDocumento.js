@@ -25,3 +25,12 @@ exports.deleteDocumento = function (req, res, next) {
       res.send(documento);
     }).catch(next);
 };
+
+exports.getDocumentoByDataEColaborador = function(req, res, next) {
+    const funcionario_id = req.body.funcionario_id
+    const data = req.body.data
+
+    Documento.find({funcionario_id: funcionario_id, data: data}).then(function(documento) {
+        res.send(documento.url_arquivo);
+    }).catch(next);
+}
