@@ -25,7 +25,7 @@ router.get('/documento/:id',apiControllerDocumento.getDocumento);
 router.post('/documento',apiControllerDocumento.createDocumento);
 router.put('/documento/:id',apiControllerDocumento.updateDocumento);
 router.delete('/documento/:id',apiControllerDocumento.deleteDocumento);
-router.get('/holerite', apiControllerDocumento.getDocumentoByDataEColaborador);
+router.post('/holerite', apiControllerDocumento.getDocumentoByDataEColaborador);
 
 router.get('/unidade/:id',apiControllerUnidade.getUnidade);
 router.post('/unidade',apiControllerUnidade.createUnidade);
