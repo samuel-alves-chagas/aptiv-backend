@@ -34,8 +34,9 @@ exports.getDocumentoByDataEColaborador = function(req, res, next) {
     Documento.find({funcionario_id: funcionario_id, data: data, tipo: tipo}).then(function(documento) {
         if(documento[0]) {
             res.status(200).json(documento[0]);
+        } else {
+            res.status(404).send({error: "Documento não encontrado!"});
         }
-        return res.status(404).send({error:"Documento não encontrado!"})
     }).catch((err) => {
         console.log(err)
         next()
