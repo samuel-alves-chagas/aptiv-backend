@@ -32,7 +32,7 @@ exports.getDocumentoByDataEColaborador = function(req, res, next) {
 
     Documento.find({funcionario_id: funcionario_id, data: data}).then(function(documento) {
         if(documento[0]) {
-            return res.json(documento[0]).send(200);
+            res.status(200).json(documento[0]);
         }
     }).catch(next);
 }
