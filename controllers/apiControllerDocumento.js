@@ -34,7 +34,7 @@ exports.getDocumentoByDataEColaborador = function(req, res, next) {
         if(documento[0]) {
             res.status(200).json(documento[0]);
         } else {
-            res.status(404).send('Holerite não encontrado, verifique o mês e ano informado!');
+            res.status(404).send('Documento não encontrado!');
         }
     }).catch(next);
 }
