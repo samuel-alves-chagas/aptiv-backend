@@ -27,9 +27,9 @@ exports.deleteDocumento = function (req, res, next) {
 };
 
 exports.getDocumentoByDataEColaborador = function(req, res, next) {
-    const funcionario_id = req.body.funcionario_id
-    const data = req.body.data
-    const tipo = req.body.tipo
+    let funcionario_id = req.body.funcionario_id
+    let data = req.body.data
+    let tipo = req.body.tipo
 
     Documento.find({funcionario_id: funcionario_id, data: data, tipo: tipo}).then(function(documento) {
         if(documento[0]) {
